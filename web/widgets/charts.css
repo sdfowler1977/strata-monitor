@@ -1,0 +1,31 @@
+/* charts.css - styles for charts.js widgets. Colours come from CSS variables where a theme provides them. */
+.w-unavail{display:flex;align-items:center;justify-content:center;height:100%;min-height:36px;color:var(--unavail,rgba(203,213,225,.6));font:600 13px/1.2 inherit;letter-spacing:.08em;text-transform:uppercase;border:1px dashed var(--grid,rgba(148,163,184,.25));border-radius:8px}
+.w-ring,.w-donut{width:100%;height:100%;max-height:100%}
+.w-ring-v{fill:var(--text,#e6f7ff);font:700 19px system-ui,sans-serif}.w-ring-s{fill:var(--muted,#94a3b8);font:600 9px system-ui,sans-serif}
+.w-spark,.w-area{width:100%;height:100%;display:block}
+.w-legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--muted,#94a3b8);margin-top:4px}.w-legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px}.w-legend b{color:var(--text,#e2e8f0);font-weight:600}
+.w-heat{display:flex;flex-direction:column;gap:3px;height:calc(100% - 22px)}.w-heat-row{display:flex;align-items:stretch;gap:6px;flex:1}.w-heat-l{width:52px;font-size:12px;color:var(--muted,#94a3b8);align-self:center}
+.w-heat-cells{flex:1;display:grid;gap:2px}.w-heat-cells i{border-radius:2px;min-height:8px}.w-heat-cells i.na{background:repeating-linear-gradient(45deg,var(--grid,rgba(148,163,184,.14)) 0 3px,transparent 3px 6px)}
+.w-heat-scale{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted,#94a3b8);margin-top:6px}.w-heat-scale b{flex:1;height:6px;border-radius:3px;background:linear-gradient(90deg,#0e7490,#22d3ee,#34d399,#fbbf24,#f43f5e)}
+.w-gantt{display:flex;flex-direction:column;gap:5px;height:100%}.w-gantt-row{display:flex;align-items:center;gap:8px;flex:1;min-height:14px}.w-gantt-l{width:62px;font-size:12px;color:var(--muted,#94a3b8);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.w-gantt-track{position:relative;flex:1;height:100%;max-height:18px;background:var(--grid,rgba(255,255,255,.05));border-radius:4px}.w-gantt-track i{position:absolute;top:2px;bottom:2px;border-radius:3px;box-shadow:0 0 6px rgba(34,211,238,.35)}
+.w-gantt-axis{display:flex;justify-content:space-between;padding-left:70px;font-size:11px;color:var(--muted,#64748b)}
+.w-bars{display:flex;flex-direction:column;gap:7px}.w-bar{display:grid;grid-template-columns:70px 1fr 90px;align-items:center;gap:8px;font-size:12px;color:var(--muted,#94a3b8)}.w-bar b{color:var(--text,#e2e8f0);text-align:right;font-weight:600}
+.w-bar-t{height:7px;background:var(--track,rgba(255,255,255,.08));border-radius:4px;overflow:hidden}.w-bar-t i{display:block;height:100%;border-radius:4px}
+.w-cols{display:flex;align-items:flex-end;gap:10px;height:100%}.w-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:12px;color:var(--muted,#94a3b8)}.w-col i{width:70%;border-radius:4px 4px 0 0;min-height:2px}.w-col b{color:var(--text,#e2e8f0)}
+.w-dial{width:100%;height:100%}
+.w-host{display:flex;flex-direction:column;position:relative}.w-plot{position:relative;flex:1;min-height:0;padding-left:34px}.w-plot>svg{width:100%;height:100%;display:block}
+.w-yaxis{position:absolute;left:0;top:0;bottom:0;width:32px;font-size:10.5px;color:var(--muted,#94a3b8);pointer-events:none}.w-yaxis span{position:absolute;right:3px;transform:translateY(-50%);white-space:nowrap}.w-yaxis span:first-child{transform:none}.w-yaxis span:last-child{transform:translateY(-100%)}
+.w-yaxis.r{left:auto;right:0;text-align:left}.w-yaxis.r span{left:3px;right:auto}.w-host:has(.w-yaxis.r) .w-plot{padding-right:36px}
+.w-xaxis{display:flex;justify-content:space-between;padding-left:34px;font-size:10.5px;color:var(--muted,#94a3b8);flex:none;position:relative}.w-xaxis em{position:absolute;left:50%;transform:translateX(-50%);font-style:normal;opacity:.7}
+.w-legend{flex:none}.w-heat-scale{flex:none}
+.w-table{position:absolute;top:0;right:0;z-index:3;font-size:11px}.w-table summary{cursor:pointer;color:var(--accent,#22d3ee);list-style:none;padding:2px 8px;border:1px solid var(--border,rgba(34,211,238,.3));border-radius:6px}
+.w-table[open]{position:absolute;inset:0;background:var(--raised,#0b1528);border-radius:8px;padding:6px;overflow:auto}.w-table[open] summary{float:right}.w-table table{width:100%;border-collapse:collapse;font-size:12px}.w-table caption{text-align:left;color:var(--muted);padding-bottom:4px}
+.w-table th,.w-table td{padding:3px 6px;border-bottom:1px solid var(--grid,rgba(148,163,184,.14));text-align:left;white-space:nowrap}
+.w-bar-t{position:relative}.w-bar-t i{position:absolute;top:0;bottom:0}.w-bar-t u{position:absolute;top:-2px;bottom:-2px;width:1px;background:var(--text,#e2e8f0);opacity:.6}
+.w-col-a{position:relative;flex:1;width:70%;min-height:20px}.w-col-a i{position:absolute;left:0;right:0;border-radius:3px}.w-col-a u{position:absolute;left:-6px;right:-6px;height:1px;background:var(--text,#e2e8f0);opacity:.5}
+.w-col-a i{width:auto;min-height:0}.w-cols{height:calc(100% - 24px)}.w-has-table{position:relative}.w-host .w-heat{flex:1;height:auto;min-height:0}.w-host .w-gantt{flex:1;height:auto;min-height:0}
+.w-xlabel{flex:none;text-align:center;font-size:10.5px;color:var(--muted,#94a3b8);opacity:.8}
+.w-noy .w-plot,.w-noy .w-xaxis{padding-left:0}
+.w-host>svg{flex:1 1 0;min-height:0;width:100%}.w-unavail{box-sizing:border-box;min-height:0;overflow:hidden;text-align:center;padding:4px}
+.w-gantt{gap:2px}.w-gantt-row{min-height:6px}.w-gantt-l{font-size:11px;line-height:1}.w-gantt-track{height:auto;align-self:stretch;max-height:14px}
