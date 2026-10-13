@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.log
+*.bak
+*.orig
+strata-monitor.json
+*.env
+.env
+/dist/
+*.zip
+.DS_Store
