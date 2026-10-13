@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strata Monitor</title><meta name="monitor-token" content="__MONITOR_TOKEN__"><link rel="stylesheet" href="widgets/charts.css"><link rel="stylesheet" href="style.css"></head>
+<body><div class="app">
+<aside class="side">
+  <div class="logo"><svg viewBox="0 0 32 32"><path d="M4 9l12-6 12 6-12 6z" fill="#22d3ee"/><path d="M4 16l12 6 12-6" stroke="#67e8f9" stroke-width="2.4" fill="none"/><path d="M4 23l12 6 12-6" stroke="#a78bfa" stroke-width="2.4" fill="none"/></svg><span>STRATA</span></div>
+  <nav id="nav"></nav>
+  <div class="tps" id="tps"></div>
+  <div class="sys"><div class="sys-c"><i id="sysdot"></i><div><b id="systxt">Checking…</b><small id="sysver">Strata unavailable</small></div></div></div>
+</aside>
+<main>
+  <header class="top">
+    <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="search" placeholder="Search panels, metrics, requests…"></div>
+    <div class="env" style="margin-left:auto"><i></i><select id="env"></select></div>
+    <div class="env" title="Theme"><svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /></svg><select id="theme" class="thsel" aria-label="Theme"></select><button class="btn sm sec" id="lightdark" title="Light / dark">◐</button></div>
+    <button class="bell" id="bell" title="Alerts"><svg viewBox="0 0 24 24"><path d="M6 17V11a6 6 0 0112 0v6l2 2H4z"/><path d="M10 21h4"/></svg><b id="bellc">0</b></button>
+    <div class="avatar" id="avatar">ST</div>
+  </header>
+  <section class="phead">
+    <div><h1 id="ptitle"></h1><p id="psub"></p></div>
+    <div class="pmeta">
+      <span class="pill live" id="livepill"><i></i>LIVE</span>
+      <span class="ep"><code id="ep"></code><button id="copy" title="Copy endpoint">⧉</button></span>
+      <span class="up"><small>Uptime</small><b id="uptime">unavailable</b></span>
+      <div class="range" id="range"></div>
+      <button class="kebab" id="kebab">⋮</button>
+      <div class="menu" id="menu"><a data-act="export">Export snapshot (JSON)</a><a data-act="pause">Pause / resume updates</a><a data-act="diag">Run diagnostics</a></div>
+    </div>
+  </section>
+  <section class="grid" id="grid"></section>
+  <footer class="strip"><span><i class="dot ok" id="stripdot"></i>Strata Monitor <b id="striplive">Live</b></span><span>Reads live · writes only on confirm</span><span>Data age <b id="age">—</b></span><span class="tabs" id="tabs"></span></footer>
+</main></div>
+<div class="modal" id="modal"><div class="modal-c"><header><h3 id="mtitle"></h3><button id="mclose">✕</button></header><div id="mbody"></div></div></div>
+<script src="widgets/charts.js"></script><script src="ext.js"></script><script src="app.js"></script></body></html>
